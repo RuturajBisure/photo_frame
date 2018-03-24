@@ -1,0 +1,14 @@
+= form_for @image, html: { multipart: true }  do |f|
+
+  = f.file_field :photo
+  %br
+  %br
+  = f.label 'Tagline'
+  = f.text_field :tagline 
+  %br
+  %br
+  = f.label 'Owner'
+  = f.text_field :owner 
+  %br
+  %br
+  = f.submit "Submit"

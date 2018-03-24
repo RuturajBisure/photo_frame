@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gallery</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if model_signed_in? %>
+      <%= "Signed In as #{current_model.email}" %> <%= link_to "Sign Out", destroy_model_session_path, :method => :delete, :style => "text-decoration:none" %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
